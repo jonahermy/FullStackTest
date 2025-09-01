@@ -1,15 +1,16 @@
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 5000
+# Use official Gradle image to build
+FROM gradle:8.5-jdk21 AS builder
+ENV GRADLE_USER_HOME=/gradle-cache
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
-COPY ["Backend.csproj", "./"]
-RUN dotnet restore "./Backend.csproj"
+WORKDIR /app
 COPY . .
-RUN dotnet publish -c Release -o /app/publish
 
-FROM base AS final
+# Clean and build
+RUN gradle clean build --no-daemon --stacktrace --info
+
+# Use OpenJDK runtime for smaller image
+FROM eclipse-temurin:21-jdk-jammy AS runtime
 WORKDIR /app
-COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "Backend.dll"]
+COPY --from=builder /app/build/libs/*.jar app.jar
+EXPOSE 5000
+ENTRYPOINT ["java","-jar","app.jar"]
