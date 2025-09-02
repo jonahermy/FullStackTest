@@ -10,7 +10,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/")
-class NumberController {
+class WeatherForecastController {
 
     private val summaries = arrayOf(
         "Freezing", "Bracing", "Chilly", "Cool", "Mild",
@@ -32,11 +32,13 @@ class NumberController {
         return forecasts
     }
 
-    data class WeatherForecast(
+    class WeatherForecast(
         var date: LocalDateTime,
         var temperatureC: Int,
         var summary: String?
     ) {
+
+        private constructor() : this(LocalDateTime.now(), 0, null)
 
         var temperatureF: Int
 
