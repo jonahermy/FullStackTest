@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/jhu/Documents/Privat/Backend/Backend.csproj": {}
+    "C:\\Users\\johan\\Documents\\Projects\\FullStackTest\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "/home/jhu/Documents/Privat/Backend/Backend.csproj": {
+    "C:\\Users\\johan\\Documents\\Projects\\FullStackTest\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jhu/Documents/Privat/Backend/Backend.csproj",
+        "projectUniqueName": "C:\\Users\\johan\\Documents\\Projects\\FullStackTest\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "/home/jhu/Documents/Privat/Backend/Backend.csproj",
-        "packagesPath": "/home/jhu/.nuget/packages/",
-        "outputPath": "/home/jhu/Documents/Privat/Backend/obj/",
+        "projectPath": "C:\\Users\\johan\\Documents\\Projects\\FullStackTest\\Backend\\Backend.csproj",
+        "packagesPath": "C:\\Users\\johan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\johan\\Documents\\Projects\\FullStackTest\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/jhu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\johan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
