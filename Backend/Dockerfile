@@ -12,5 +12,5 @@ RUN gradle clean build --no-daemon --stacktrace --info
 FROM eclipse-temurin:21-jdk-jammy AS runtime
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
-EXPOSE 5000
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]

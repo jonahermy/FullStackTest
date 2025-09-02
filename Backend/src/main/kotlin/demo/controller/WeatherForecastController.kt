@@ -1,8 +1,11 @@
+package demo.controller
+
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.util.*
 
 @RestController
@@ -19,11 +22,9 @@ class NumberController {
     @GetMapping("/weatherforecast")
     fun getWeatherForecast(): List<WeatherForecast> {
         val forecasts = mutableListOf<WeatherForecast>()
-        for (index in 0..5) {
-            val tmpDate = Calendar.getInstance()
-            tmpDate.add(Calendar.DAY_OF_MONTH, 1)
+        for (index in 1..5) {
             forecasts += WeatherForecast(
-                date = tmpDate.toString(),
+                date = LocalDateTime.now().plusDays(index.toLong()),
                 temperatureC = random.nextInt(50) - 10,
                 summary = summaries[random.nextInt(summaries.size)]
             )
@@ -32,7 +33,7 @@ class NumberController {
     }
 
     data class WeatherForecast(
-        var date: String,
+        var date: LocalDateTime,
         var temperatureC: Int,
         var summary: String?
     ) {
